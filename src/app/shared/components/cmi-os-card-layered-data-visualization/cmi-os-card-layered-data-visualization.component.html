@@ -1,0 +1,111 @@
+<div class="cmi-os-card-layered-data-view">
+  <img *ngIf="_isLoading" class="loading" src="assets/chart-bar-horizontal/loadingDots.gif" />
+  <div *ngIf="!_isLoading && input!==null">
+    <div class="header">
+
+      <div class="titleWrapper">
+        <div>{{input.cardTitle}}</div>
+      </div>
+
+      <div class="viewWrapper">
+        <!-- <div class="viewModeWrapper">
+          <button type="button" class="btn" [ngClass]="_isViewModeChart ? 'icoViewModeTable' : 'icoViewModeChart'"
+            (click)="fnToggleViewModeClick()">
+          </button>
+        </div> -->
+        <!--??-->
+        <div class="icoMenuWrapper" *ngIf="input.isExportAvailable">
+          <button type="button" class="btn icoDownload" [disabled]="_isLoading" (click)="onExportClick(''+section.id)">
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="body" clas="container">
+      <div id='{{_htmlContainerParentPreffix + input.htmlContainerId}}' style="background-color: #fff;">
+        <div id="{{input.htmlContainerId + _htmlContainerTableSuffix}}">
+          <mat-card>
+            <mat-card-content>
+              <div>
+                <table class="cardSummary">
+                  <tr style="height: 1px;">
+                    <td class="title" style="height: inherit;">
+                      <div class="marker"></div>
+
+                      <div class="label">{{input.translations.cardAreaSubtitleLabel}}</div>
+                      {{input.title}}
+                      <div class="periodWrapper">
+                        {{input.cardPeriod}}
+                      </div>
+                    </td>
+                    <td class="totalSummary">
+                      <div class="audience-row">
+                        <div class="audience-data">
+                          {{input.translations.cardAreaResumeTitleLabel}}
+                          <mat-icon class="info-icon" *ngIf="input.translations.audienceTooltipText"
+                            [matTooltip]="input.translations.audienceTooltipText"
+                            matTooltipPosition="above">info_outline</mat-icon>
+                        </div>
+                        <div class="numberCircle">
+                          {{input.totalAudienceValue}}
+                        </div>
+                      </div>
+                      <div class="universe-audience-data">
+                        {{input.translations.cardAreaResumeTotalLabel}} <span
+                          style="font-weight: 700; margin-right: 4px; margin-left: 4px">{{input.totalUniverseValue}}
+                          {{UniversalLabelText}}</span>
+                        <mat-icon class="info-icon" *ngIf="input.translations.audienceTooltipText"
+                          [matTooltip]="input.translations.universeTooltipText"
+                          matTooltipPosition="above">info_outline</mat-icon>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <hr class="devider">
+
+              <div class="cardDataView">
+                <ng-template #slicer><ng-content></ng-content></ng-template>
+                <ng-container *ngTemplateOutlet="slicer"></ng-container>
+
+                <div style="margin-top: 24px; margin-left: 18px; margin-right: 15px;">
+                  <app-view-configure [sortByOptions]="_sortByOptions" [sortOrderOptions]="_sortOrderOptions"
+                    [visibilityOptions]="_visibilityOptions" [questionType]="question.questionType"
+                    [isAverage]="_isAverage" (OnViewModeChanged)="onViewModeChanged($event)"
+                    (OnViewDataTypeChanged)="onViewDataTypeChanged($event)"
+                    (OnSortChanged)="onSortOptionChanged($event)" (OnVisibilityChanged)="onVisibilityChanged($event)">
+                  </app-view-configure>
+                </div>
+
+                <hr class="devider">
+
+                <div class="cardDataViewChart" *ngIf="_isViewModeChart">
+                  <app-stack-bar-chart *ngIf="stackBarChartData.length" [chartData]="stackBarChartData"
+                    [chartLegend]="stackBarChartColumns" [viewDataType]="_viewDataType"
+                    [visibilityOptions]="_currentVisibilityOptions"
+                    [showAggregation]="isToAggregate"></app-stack-bar-chart>
+
+                  <app-donut-chart *ngIf="donutChartData.length" [chartData]="donutChartData"
+                    [viewDataType]="_viewDataType"></app-donut-chart>
+
+                  <app-bar-chart *ngIf="barChartData.length" [chartData]="barChartData"
+                    [viewDataType]="_viewDataType"></app-bar-chart>
+
+                </div>
+
+                <div class="cardDataViewTable" *ngIf="!_isViewModeChart && _tableInput!.data.length">
+                  <cmi-os-table-view [isLoading]="_isLoading" [input]="_tableInput!"
+                    (onUpdateInfo)="fnTableUpdated($event)" (onRowSelectionChange)="fnRowSelectionChanged($event, 0)"
+                    (onResponseCheckboxChange)="fnResponseCheckboxChanged($event)">
+                  </cmi-os-table-view>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

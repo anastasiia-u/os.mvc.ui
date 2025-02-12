@@ -1,0 +1,19 @@
+<div class="bottom-buttons">
+  <div class="f-button">
+    <button class="btn-reset" [disabled]="isResetButtonDisabled" (click)="resetFilter()"
+      style="border:none !important;">
+      <div
+        style="display: flex;align-content: center;justify-content: center;align-items: center;position:relative;top:2px;">
+        <mat-icon>replay</mat-icon>
+        <span style="padding-left:10px;">Reset</span>
+      </div>
+    </button>
+  </div>
+  <div class="f-button">
+    <button mat-raised-button class="btn-see-results button-text" [disabled]="isSeeResultsDisabled"
+      (click)="loadSurveyResults()">See Results</button>
+  </div>
+  <div class="f-button">
+    <button (click)="save()" [disabled]="isSaveButtonDisabled || isSeeResultsDisabled" class="btn-save">Save</button>
+  </div>
+</div>

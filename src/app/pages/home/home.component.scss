@@ -1,0 +1,201 @@
+.home {
+  min-width: 1380px;
+  margin: auto;
+}
+
+.homeHeader {
+  margin: 24px;
+}
+
+.homeBody {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 24px;
+}
+
+.homeContent {
+  width: 100%;
+  margin-left: 24px;
+}
+
+.left-panel {
+  position: sticky;
+  align-content: center;
+  align-self: center;
+  top: 0;
+  width: 295px;
+}
+
+.ico-all-app {
+  width: 32px;
+  height: 32px;
+  background-image: url("../../../assets/menu-apps.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 20px;
+  font-family: "KentledgeMedium";
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.resource-icon {
+  margin-right: 15px;
+  display: flex;
+  color: #64358c;
+  margin-bottom: 2px;
+}
+
+.side-menu-container {
+  position: fixed;
+  z-index: 200;
+  top: 5.5rem;
+  left: 3rem;
+  width: 20rem;
+}
+
+.icon {
+  border: 1px solid #562E76;
+  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  fill: currentColor;
+  margin: 0 7px 0 0;
+  transition: background-color 2s ease-in-out;
+}
+
+::ng-deep svg {
+  vertical-align: top !important;
+}
+
+.filter-menu {
+  width: 295px !important;
+}
+
+.filter-accordion {
+  display: block;
+  max-width: 295px;
+}
+
+.filter-accordion-item {
+  display: block;
+  background-color: #ffffff;
+}
+
+.filter-accordion-item+.filter-accordion-item {
+  border-top: none;
+}
+
+.filter-accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+.filter-accordion-item-description {
+  font-size: 0.85em;
+  color: #999;
+}
+
+.filter-accordion-item-header {
+  padding: 16px 16px 8px 16px;
+}
+
+.filter-accordion-item-header:hover {
+  cursor: pointer;
+}
+
+.filter-accordion-item:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.filter-accordion-item:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.filter-accordion-item[aria-expanded="true"] .filter-accordion-item-header {
+  height: 80px;
+}
+
+.icon:hover {
+  background-color: var(--custom-color-button-hover2);
+}
+
+.filter-header {
+  letter-spacing: 0px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 19.2px;
+  padding: 15px 0 15px 3px;
+}
+
+::ng-deep #app-filter .mat-mdc-form-field-icon-prefix {
+  display: none !important;
+}
+
+::ng-deep #app-filter .mat-mdc-form-field-icon-suffix {
+  padding: 0 8px 0 4px !important;
+}
+
+::ng-deep #app-filter .mat-mdc-form-field-icon-suffix [matsuffix] {
+  background-image: url('../../../assets/icons/arrow_down.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+::ng-deep #app-filter .mat-mdc-form-field-icon-suffix [matsuffix] img {
+  display: none;
+}
+
+::ng-deep #question .mat-mdc-select-value,
+::ng-deep #category .mat-mdc-select-value,
+::ng-deep #period .mat-mdc-select-value,
+::ng-deep #surveyType .mat-mdc-select-value,
+::ng-deep #response .mat-mdc-select-value {
+  padding-left: 12px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  font-family: 'Kentledge' !important;
+  color: var(--custom-color-primary-dark-purple) !important;
+}
+
+::ng-deep #question .mat-mdc-select-min-line,
+::ng-deep #category .mat-mdc-select-min-line,
+::ng-deep #period .mat-mdc-select-min-line,
+::ng-deep #surveyType .mat-mdc-select-min-line,
+::ng-deep #response .mat-mdc-select-min-line {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 16.8px !important;
+  font-family: 'Kentledge' !important;
+  color: var(--custom-color-primary-dark-purple) !important;
+}
+
+::ng-deep #category .mat-mdc-select-min-line {
+  position: relative;
+  top: -2px;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__leading,
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__notch,
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: #E9EAEE !important;
+}
+
+::ng-deep .cmi-os-dds .mat-mdc-select {
+  margin-top: 2px;
+}
+
+::ng-deep .cmi-os-dds .mat-mdc-select-value {
+  margin-top: 2px;
+}

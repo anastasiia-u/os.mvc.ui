@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo 'Logging in to Amazon ECR . . .'
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      - echo 'Setting variables . . .'
+      - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_NAME
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo 'Building the Docker image . . .'
+      - docker build -t $ECR_NAME:$IMAGE_TAG --build-arg env_name=$ENVIRONMENT_NAME -f Dockerfile .
+      - docker tag $ECR_NAME:$IMAGE_TAG $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag $ECR_NAME:$IMAGE_TAG $REPOSITORY_URI:$ECR_TAG
+      - docker images
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo 'Pushing the Docker images . . .'
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push $REPOSITORY_URI:$ECR_TAG

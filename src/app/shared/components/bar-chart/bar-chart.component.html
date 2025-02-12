@@ -1,0 +1,55 @@
+<div class="bar-chart-container">
+    <ng-container *ngFor="let row of chartData">
+        <ng-container *ngIf="row.isVissible">
+            <ng-container *ngTemplateOutlet="barChartRow;
+            context:
+            {
+            isRoot: true,
+            row: row,
+            width: calculateWidth(row, chartData)
+            }">
+            </ng-container>
+        </ng-container>
+
+        <ng-container *ngFor="let nestedItem of row.nestedData;">
+            <ng-container *ngTemplateOutlet="barChartRow;
+            context:
+            {
+              isRoot: false,
+              row: nestedItem,
+              width: calculateNestedWidth(nestedItem.count, row.count, calculateWidth(row, chartData))
+            }">
+            </ng-container>
+        </ng-container>
+
+    </ng-container>
+</div>
+
+<ng-template #barChartRow let-root="isRoot" let-row="row" let-data="data" let-width="width">
+    <div *ngIf="row.count" class="bar-row bar-row-{{root ? 'root' : 'nested'}}">
+        <div class="q-name">
+            {{row.name}}
+        </div>
+
+        <div *ngIf="viewDataType === viewDataTypeEnum.Percentage" class="percentage">
+            {{row.percentage}} %
+        </div>
+
+        <!-- <div *ngIf="viewDataType === viewDataTypeEnum.Count" class="count"> -->
+        <div *ngIf="viewDataType === viewDataTypeEnum.Count" class="percentage">
+            {{row.count | number : '1.0-0'}}
+        </div>
+
+        <div class="bar-line" [style.backgroundColor]="row.color" [style.width.%]="width" [ngbTooltip]="htmlTooltip"
+            tooltipClass="chart-tooltip" (mouseenter)="showToltip(row)">
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #htmlTooltip>
+    <div class="chart-tooltip-container">
+        <b>{{tooltipRow.name}}</b>
+        <div>Count: {{tooltipRow.count | number : '1.0-0' }}</div>
+        <div *ngIf="tooltipRow.percentage">Percentage: {{tooltipRow.percentage }}%</div>
+    </div>
+</ng-template>

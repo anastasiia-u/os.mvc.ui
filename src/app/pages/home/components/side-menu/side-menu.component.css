@@ -1,0 +1,78 @@
+.menu-area {
+  padding-top: 0.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.menu-area:hover {
+  cursor: pointer;
+}
+
+.subtree-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  font-weight: 900;
+  font-size: 16px;
+  font-family: Kentledge;
+  color: #562e76;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s linear;
+  padding: 0.75rem 2rem 0.75rem 3rem;
+}
+
+.subtree-invisible {
+  display: none;
+}
+
+.submenu-item {
+  position: relative;
+  padding: 0 1rem 0 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #562e76;
+  transition: 0.1s;
+  margin-bottom: 0.5rem;
+
+}
+
+.submenu-item:hover .marker {
+  background: #785891;
+}
+
+.submenu-item:hover {
+  cursor: pointer;
+}
+
+.marker {
+  position: relative;
+  height: 32px;
+  width: 8px;
+  margin: 0 16px 0 16px;
+  border-radius: 30px;
+  background: transparent;
+  transition: background 0.05s ease-in-out;
+}
+
+.marker-active {
+  position: relative;
+  height: 32px;
+  width: 8px;
+  margin: 0 16px 0 16px;
+  border-radius: 30px;
+  background: #785891;
+  transition: background 0.05s ease-in-out;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.mat-tree-node {
+  min-height: 30px !important;
+}

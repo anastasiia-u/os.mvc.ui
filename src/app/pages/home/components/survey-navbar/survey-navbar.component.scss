@@ -1,0 +1,84 @@
+.survey-navbar-menu {
+    white-space: wrap;
+    position: relative;
+    width: 295px;
+    top: 0;
+    padding-top: 24px;
+
+    .category {
+        color: var(--custom-color-blue-dark5);
+        font-family: "KentledgeMedium";
+        font-size: 12px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0px;
+        text-align: left;
+        line-height: 28px;
+        text-transform: uppercase;
+        margin-top: 16px;
+        margin-bottom: 24px;
+    }
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 5px 0 5px 0;
+    display: flex;
+    margin-bottom: 15px;
+
+    a {
+        text-decoration: none;
+    }
+
+}
+
+.icon {
+    padding: 0 16px;
+}
+
+.text {
+    font-family: "Kentledge";
+    font-size: 16px;
+    line-height: 22.4px;
+    color: var(--custom-color-dark-purple);
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-left: 7px;
+}
+
+.menu-item.active .text {
+    padding-left: 15px;
+    color: var(--custom-color-primary-blue) !important;
+}
+
+.text:hover {
+    color: var(--custom-color-primary-blue) !important;
+}
+
+.menuItem {
+    display: none;
+}
+
+.menu-item.active .menuItem {
+    display: block;
+    width: 6px;
+    border-radius: 4px;
+    height: 22px;
+    background: var(--custom-color-primary-blue);
+}
+
+.category-header {
+    color: var(--custom-color-primary-dark-purple);
+    font-family: "KentledgeMedium";
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 16.8px;
+    padding: 20px 0 20px 0;
+}

@@ -1,0 +1,81 @@
+<div class="stack-bar-chart-container">
+
+    <div class="information" *ngIf="showAggregationInfo">
+        <mat-icon class="info-icon">info_outline</mat-icon>
+        Tap on any responses to aggregate the results
+    </div>
+
+    <div class="q-responses">
+        <ng-container *ngFor="let item of responses;  let i = index;">
+            <div *ngIf="item.isVissible" class="response" (click)="aggregateResponse(item)"
+                [class.selected]="item.isSelected">
+                <span class="dot" [style.backgroundColor]="item.color"></span>
+                <span class="a-name">{{item.name}}</span>
+            </div>
+        </ng-container>
+        <cmi-os-button *ngIf="showResetAggreagationBtn" [size]="$any('md')" [buttonType]="buttonTypeEnum.Link"
+            (click)="resetAggregation()">
+            <mat-icon>replay</mat-icon>
+            <span>Reset</span>
+        </cmi-os-button>
+    </div>
+
+    <ng-container *ngFor="let row of chartData">
+        <div *ngIf="show(row)" class="stack-row {{row.isMain ? 'root-level' : 'nested-level'}}">
+            <div class="q-name">
+                {{row.title}}
+            </div>
+
+            <div class="stack-bar-container">
+
+                <ng-container *ngTemplateOutlet="aggregation;context:{ data: calculateAggregationData(row)}">
+                </ng-container>
+
+                <ng-container *ngFor="let item of row.chartData; let i = index;">
+                    <div *ngIf="!item.isSelected && item.value > 0" class="stack-bar"
+                        [style.width.%]="calculateWidth(item, row.chartData)">
+                        <div class="stack-bar-data">
+
+                            {{item.value}}<ng-container *ngIf="viewDataType === viewDataTypeEnum.Percentage">%</ng-container>
+
+                        </div>
+                        <div class="stack-bar-line" [style.backgroundColor]="getColor(item.colorIndex)" [ngbTooltip]="htmlTooltip"
+                            tooltipClass="chart-tooltip" (mouseenter)="showToltip(item)"> </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<ng-template #htmlTooltip>
+    <div class="chart-tooltip-container">
+        <b>{{tooltipRow.name}}</b>
+        <div>Count: {{tooltipRow.value }}</div>
+        <div>Percentage: {{tooltipRow.value }}%</div>
+    </div>
+</ng-template>
+
+
+<ng-template #aggregation let-data="data">
+    <div *ngIf="data.totalWidth" class="stack-bar" [style.width.%]="data.totalWidth">
+        <div class="stack-bar-data chart-value">
+
+            <ng-container *ngIf="viewDataType === viewDataTypeEnum.Percentage">
+                {{data.totalPercentage}}%
+            </ng-container>
+
+            <ng-container *ngIf="viewDataType === viewDataTypeEnum.Count">
+                {{data.totalCount}}
+            </ng-container>
+
+            <div class="group-bar-line">
+                <ng-container *ngFor="let item of data.group; trackBy: identify">
+                    <div class="group-stack-bar-line" [style.width.%]="item.width" [style.backgroundColor]="item.color"
+                        [ngbTooltip]="htmlTooltip" tooltipClass="chart-tooltip" (mouseenter)="showGroupToltip(item)">
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</ng-template>

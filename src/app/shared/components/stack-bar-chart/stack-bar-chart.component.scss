@@ -1,0 +1,147 @@
+.stack-bar-chart-container {
+
+    .chart-value {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22.4px;
+        color: #232951
+    }
+
+    .information {
+        font-family: 'KentledgeRegular';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22.4px;
+        text-align: left;
+        color: #4F5474;
+
+        .info-icon {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+    }
+
+    .q-responses {
+        display: flex;
+        gap: 24px;
+        margin: 24px 0;
+
+        .response {
+            padding: 8px;
+
+            &.selected {
+                border-radius: 4px;
+                border: 1px solid #ADD5E8;
+                background: #EAF4F9;
+            }
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .a-name {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.4px;
+        }
+    }
+
+    .root-level {
+        .q-name {
+            font-family: 'KentledgeExtraBold';
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 19.2px;
+            padding: 24px 0;
+        }
+
+        .stack-bar-line,
+        .group-stack-bar-line {
+            height: 12px;
+        }
+    }
+
+    .nested-level {
+        .q-name {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.4px;
+            text-align: left;
+            padding-bottom: 12px;
+        }
+
+        .stack-bar-line,
+        .group-stack-bar-line {
+            height: 8px;
+        }
+    }
+
+    .stack-row {
+        display: flex;
+
+        .q-name {
+            width: 290px;
+            color: #000;
+        }
+
+        .stack-bar-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .stack-bar {
+                display: flex;
+                flex-direction: column;
+                margin-right: 45px;
+
+                .stack-bar-data {
+                    white-space: nowrap;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 22.4px;
+                    text-align: left;
+                    color: #232951;
+                }
+
+                .stack-bar-line {
+                    border-radius: 50px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .group-bar-line {
+        display: flex;
+
+        .group-stack-bar-line:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .group-stack-bar-line:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    .chart-tooltip-container {
+        font-size: 12px;
+        font-family: "KentledgeRegular";
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+}
+
+::ng-deep .mat-header-cell,
+::ng-deep .cmi-os-tv .table thead th{
+    cursor: default!important;
+}

@@ -1,0 +1,5 @@
+<cmi-os-dropdown-simple title="Medical Specialty" selectPlaceholder="Type OR choose medical specialty"
+    searchPlaceholder="" [defaultValues]="defaultMedicalSpecialties" [isMultipleSelect]="true" [isToShowSearch]="true"
+    [isToShowCheckAndUncheckAll]="true" [options]="medicalSpecialties"
+    (onValuesChanged)="medicalSpecialtiesChanged($event)">
+</cmi-os-dropdown-simple>

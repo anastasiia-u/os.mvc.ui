@@ -1,0 +1,26 @@
+<div class="sort-controls">
+  <div class="filters-row" *ngIf="formGroup.get('formControlRadio')">
+    <app-view-selector
+      [viewOptions]="viewSelectorOptions"
+      (onViewModeChanged)="onViewModeChangedHandler($event)"
+      ></app-view-selector>
+    <div class="view-selector" *ngIf="!isAverage">
+      <div class="label">
+        Show: </div>
+      <mat-radio-group [formControl]="getFormControlRadio" class="cmi-os-radio-group radio-block"
+        [attr.cmiRadioGroupSize]="$any('lg')">
+        <mat-radio-button *ngFor="let option of showOptions"
+          [value]="option.value"
+          [checked]="option.checked"
+          (change)="onViewDataTypeChanged(option.value)">{{option.label}}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+  <app-sort-dropdowns *ngIf="!isAverage"
+    [sortByOptions]="sortByOptions"
+    [sortOrderOptions]="sortOrderOptions"
+    [visibilityOptions]="visibilityOptions"
+    (OnSortChanged)="onSortOptionsChanged($event)"
+    (OnVisibilityChanged)="onVisibilityOptionsChanged($event)">
+  </app-sort-dropdowns>
+</div>

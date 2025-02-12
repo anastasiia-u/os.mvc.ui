@@ -1,0 +1,33 @@
+<form [formGroup]="slicerForm" *ngIf="!isConsumer">
+    <div class="chart-filters">
+        <span class="label">Filter: </span>
+        <ng-container *ngFor="let item of dropdowns; let i = index">
+            <cmi-os-multi-select class="slicer-dropdown" *ngIf="item.options.length" [size]="$any(item.size)"
+                containerWidth="190px" [labelText]="item.title" [selectFormControl]="item.form.get('normal')"
+                [options]="item.options" [isOptionsSorted]="true">
+            </cmi-os-multi-select>
+        </ng-container>
+        <cmi-os-button *ngIf="canReset" [size]="$any('md')" [buttonType]="buttonTypeEnum.Link" (click)="onReset()">
+            <mat-icon>replay</mat-icon>
+            <span>Reset</span>
+        </cmi-os-button>
+    </div>
+</form>
+
+<!-- Task paused.
+<div *ngIf="secondaryForm.get('formControlBreakdownChart') && !isConsumer" class="filters-row">
+    <div style="min-width: 280px">
+        <cmi-os-toggle label="Breakdown Chart by Filter"
+            [toggleFormControl]="secondaryForm.get('formControlBreakdownChart')" [size]="$any('lg')">
+        </cmi-os-toggle>
+    </div>
+    <cmi-os-simple-select *ngIf="secondaryForm.get('formControlBreakdownChart')?.value" class="slicer-dropdown"
+        [size]="$any(basedOnDropdown.size)"
+        containerWidth="220px"
+        [labelText]="basedOnDropdown.title"
+        [selectFormControl]="basedOnDropdown.form.get('normal')"
+        [options]="basedOnDropdown.options"
+        [isOptionsSorted]="true">
+    </cmi-os-simple-select>
+</div>
+--->

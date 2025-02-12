@@ -1,0 +1,114 @@
+.main-content {
+  width: 100%;
+}
+
+.sectionArea {
+  margin: 12px 0 24px 0;
+}
+
+.sectionArea .sectionAreaHeader {
+  width: 100%;
+}
+
+.sectionAreaHeaderTitleLabel {
+  width: 100%;
+  color: #4F5474;
+  font-family: "Kentledge";
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 16.8px;
+  text-transform: uppercase;
+}
+
+.sectionArea .sectionAreaHeaderTitle {
+  width: 100%;
+  color: #000;
+  font-family: "KentledgeBlack";
+  font-size: 24px;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.sectionArea .sectionAreaHeader .sectionAreaHeaderIco {
+  fill: var(--custom-sideMenu-color-dark) !important;
+  float: left;
+  height: 30px;
+  width: 30px;
+  margin: 6px 8px 8px 24px;
+}
+
+.sectionArea .sectionAreaHeader .chartAreaHeaderTitle {
+  color: var(--custom-sideMenu-color-dark) !important;
+  font-size: 16px;
+  line-height: 25px;
+  float: left;
+  margin: 8px;
+}
+
+.sectionArea .sectionBody {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 400px);
+  grid-column-gap: 120px;
+  grid-auto-flow: dense;
+}
+
+.sectionArea .sectionBody .card.simple {
+  grid-column: span 1;
+}
+
+.sectionArea .sectionBody .card.double {
+  grid-column: span 2;
+}
+
+.masonry-container {
+  width: 100%;
+  column-gap: 20px;
+}
+
+.masonry-container-col1 {
+  column-count: 1 !important;
+}
+
+.masonry-container-col2 {
+  column-count: 2 !important;
+}
+
+.masonry-child {
+  width: 100%;
+  margin-bottom: 20px !important;
+
+  break-inside: avoid;
+
+}
+
+.icoDownload {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../../../assets/images/menu-download1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.label {
+  color: #000;
+  font-family: "Kentledge";
+  font-size: 24px;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 28.8px;
+}
+
+::ng-deep .view-selector label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4F5474;
+}

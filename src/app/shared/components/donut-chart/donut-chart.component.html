@@ -1,0 +1,59 @@
+<div class="donut-chart">
+  <div class="chart">
+    <div class="chart-root" [id]="rootElementId"></div>
+  </div>
+  <div class="labels">
+
+    <div class="aggregation-container">
+
+      <div class="information" *ngIf="!_aggregationValue">
+        <mat-icon class="info-icon">info_outline</mat-icon>
+        Tap on any responses to aggregate the results
+      </div>
+      <ng-container *ngIf="_aggregationValue">
+        <div class="section">Sum of Grouped Responses: <span class="value">{{_aggregationValue | number : '1.0-2' }}
+          </span> <span *ngIf="viewDataType == viewDataTypeEnum.Percentage">%</span> </div>
+        <cmi-os-button [size]="$any('md')" [buttonType]="buttonTypeEnum.Link" (click)="onReset()">
+          <mat-icon>replay</mat-icon>
+          <span>Reset</span>
+        </cmi-os-button>
+      </ng-container>
+    </div>
+
+    <ul class="list-container">
+      <ng-container *ngFor="let item of _cloneChartData">
+        <li *ngIf="item.percentage">
+          <ng-container *ngTemplateOutlet="chartLabel;context:
+          {
+            isRoot: true,
+            item: item
+          }">
+          </ng-container>
+
+          <ng-container *ngFor="let nestedItem of item.nestedData;">
+            <ng-container *ngTemplateOutlet="chartLabel;context:
+            {
+              isRoot: false,
+              item: nestedItem
+            }">
+            </ng-container>
+          </ng-container>
+
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>
+
+
+<ng-template #chartLabel let-rootLevel="isRoot" let-item="item">
+  <div class="label-container {{rootLevel ? 'root-level' : 'nested-level'}}" [class.selected]="item.isSelected">
+    <div class="label-name-container" (click)="rowSelected(item, rootLevel)">
+      <span class="dot" [style.backgroundColor]="item.color"></span>
+      <div class="name">{{item.name}}</div>
+    </div>
+    <div *ngIf="viewDataType === viewDataTypeEnum.Percentage" class="percentage">{{item.percentage}}%</div>
+    <!-- <div *ngIf="viewDataType === viewDataTypeEnum.Count" class="count">{{item.count | number : '1.0-0'}}</div> -->
+    <div *ngIf="viewDataType === viewDataTypeEnum.Count" class="percentage">{{item.count | number : '1.0-0'}}</div>
+  </div>
+</ng-template>

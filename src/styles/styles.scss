@@ -1,0 +1,171 @@
+@use '@angular/material' as mat;
+
+/* You can add global styles to this file, and also import other style files */
+// Import functions, variables, and mixins needed by other Bootstrap files
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Import Bootstrap Reboot
+@import "node_modules/bootstrap/scss/variables-dark.scss";
+@import "node_modules/bootstrap/scss/maps"; // Contains :root CSS variables used by other Bootstrap files
+@import "node_modules/bootstrap/scss/root"; // Contains :root CSS variables used by other Bootstrap files
+@import "node_modules/bootstrap/scss/reboot";
+
+@import "node_modules/bootstrap/scss/containers"; // Add .container and .container-fluid classes
+@import "node_modules/bootstrap/scss/grid"; // Add the grid system
+@import "node_modules/bootstrap/scss/helpers";
+
+@import "node_modules/bootstrap/scss/modal"; // Add .modal classes
+@import "node_modules/bootstrap/scss/buttons"; // Add .btn classes
+@import "node_modules/bootstrap/scss/tooltip";
+@import "node_modules/bootstrap/scss/dropdown";
+
+@import "node_modules/bootstrap/scss/utilities"; // Configures the utility classes that should be generated
+@import "node_modules/bootstrap/scss/utilities/api"; // Generates the actual utility classes
+
+@import 'cmi-os-design-library/src/styles/fonts';
+
+:root {
+  // COLORS
+  --custom-background: #E9E9ED;
+  --custom-color-white: #fff;
+  --custom-color-purple0: #EEEAF1;
+  --custom-color-purple4: #785891;
+  --custom-color-purple5: #562E76;
+  --custom-color-blue0: #F3F3F7;
+  --custom-color-blue-dark5: #232951;
+  --custom-color-blue-dark3: #7B7F97;
+  --custom-color-blue-dark4: #222431;
+  --custom-color-blue-dark0: #E9E9ED;
+
+  --custom-color-primary-dark-purple: #232951;
+  --custom-color-primary-blue: #3195C5;
+  --custom-color-dark-purple: #4F5474;
+  --custom-color-blue: #83BFDC;
+  --custom-color-variant-purple: #785891;
+  --custom-color-primary-purple: #562E76;
+  --custom-color-button-hover: #EEEAF1;
+  --custom-color-button-hover2: #DDD5E4;
+  --custom-color-dropdown-simple_iconColor: #4F5474;
+  --custom-color-v60-dark-purple: #7B7F97;
+
+
+
+
+  --custom-font-size: 14px;
+
+  --mdc-dialog-container-shape: 10px;
+}
+
+*,
+html,
+body {
+  font-family: Kentledge;
+}
+
+body {
+  background-color: var(--custom-background);
+  margin: 0;
+}
+
+.mat-mdc-select {
+  font-size: var(--custom-font-size) !important;
+  letter-spacing: 0 !important;
+}
+
+.mdc-list-item__primary-text {
+  font-size: var(--custom-font-size) !important;
+  letter-spacing: 0 !important;
+}
+
+.search-field {
+  @include mat.all-component-densities(-2);
+}
+
+.search-dialog {
+
+  .mdc-dialog__surface,
+  mat-dialog-content {
+    overflow-y: hidden !important;
+  }
+}
+
+.cmi-os-card-data-view .icoMenu,
+.cmi-os-card-data-view .icoViewModeTable,
+.cmi-os-card-data-view .icoViewModeChart {
+  border-width: 0px;
+}
+
+
+.mdc-button {
+  //font-size: var(--custom-font-size) !important;
+  letter-spacing: 0 !important;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: calc(50% - 80px);
+  margin: 0 !important;
+}
+
+.container {
+  padding: 0 !important;
+}
+
+.mdc-data-table__cell {
+  border-bottom: none !important;
+}
+
+.cmi-os-ft .mdc-button__label {
+  font-size: 12px !important;
+}
+
+
+.cmi-os-ddgl-popup,
+.cmi-os-ddg-popup {
+  min-width: 480px !important;
+  max-height: 60vh !important;
+}
+
+.cmi-os-dds-multi-popup {
+  min-width: 480px !important;
+  max-height: 45vh !important;
+}
+
+.cmi-os-dds-multi-popup .mat-mdc-option {
+  padding-left: 40px;
+}
+
+.cardDataViewTable {
+  padding: 0 24px 0 0 !important;
+}
+
+.filterArea .filterAreaOption {
+  display: inline-block !important;
+}
+
+.cmi-os-ddgl .hasValue .mat-mdc-select-value,
+.cmi-os-ddgl .hasValue .mat-mdc-select-min-line {
+  font-family: "Kentledge" !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+}
+
+.btn-see-results,
+.btn-reset {
+  font-weight: 400 !important;
+}
+
+.btn-save,
+.btn-reset {
+  font-family: 'Kentledge' !important;
+}
+
+.btn-reset div span {
+  padding-top: 5px;
+}
+
+.cmi-os-select-label-with-icon {
+  padding-left: 15px;
+}

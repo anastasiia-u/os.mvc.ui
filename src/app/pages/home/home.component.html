@@ -1,0 +1,73 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  rel="stylesheet" />
+
+<cmi-os-global-loading></cmi-os-global-loading>
+
+<cmi-os-banner-top [isSaasIntegrated]="isSaasIntegrated" [isOSHomeApp]="false" [baseAppUrl]="'mvp'"
+  [logoUrl]="this.themeService.getLogoUrl()" [baseAPIUrl]="''" [userName]="displayName"
+  [userPermissionString]="this.authService.getCurrentRoleWithoutPermissionRoles"
+  [currentProjectTitle]="'Syndicated Primary Research'" [currentProjectSubTitle]="''"></cmi-os-banner-top>
+
+<div class="home">
+  <!-- <div *ngIf="showHeader" class="homeHeader">
+    <cmi-os-navbar class="mt-2" title="Syndicated Primary Research" subTitle="" [userName]="displayName"
+      [useCustomNavbarMenu]="true" [logoUrl]="themeService.getLogoUrl()">
+      <div ngbDropdown navbar-menu>
+        <button type="button" class="btn ico-all-app" (click)="toggleMenu()" #menuButton></button>
+      </div>
+      <a resource-library class="resource-icon" [href]="getResourceLibraryUrl()" target="_blank" title=""
+        matTooltip="Resource Library">
+        <mat-icon>menu_book</mat-icon></a>
+    </cmi-os-navbar>
+  </div> -->
+
+  <!-- <div *ngIf="showMenu" class="side-menu-container" #menu>
+    <app-side-menu (onSelected)="showMenu=false"></app-side-menu>
+  </div> -->
+
+  <div class="homeBody">
+
+    <div class="d-flex flex-column">
+      <app-sub-navbar (OnOpenedAudience)="onOpenedAudience()"></app-sub-navbar>
+
+      <div class="left-panel" style="margin-top: 10px;">
+        <cdk-accordion class="filter-accordion">
+          <cdk-accordion-item #accordionItem="cdkAccordionItem" class="filter-accordion-item" role="button" tabindex="0"
+            [attr.id]="'accordion-header-0'" [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-0'" expanded="true">
+            <div class="filter-accordion-item-header" (click)="accordionItem.toggle();">
+              <mat-panel-title class="filter-header">Build Audience</mat-panel-title>
+              <div class="filter-accordion-item-description">
+                <mat-icon class="icon" svgIcon="menu-down"></mat-icon>
+              </div>
+            </div>
+            <div class="filter-accordion-item-body" role="region"
+              [@openClose]="accordionItem.expanded ? 'open' : 'closed'" [attr.id]="'accordion-body-0'"
+              [attr.aria-labelledby]="'accordion-header-0'">
+
+              <div [class.d-none]="!accordionItem.expanded" id="app-filter"
+                style="position:relative;top:-10px;padding:0 7px 0 7px;">
+                <app-filter
+                  (sidebarState)="setSideNavState($event); accordionItem.expanded  ? accordionItem.toggle() : ''"
+                  [showFilters]="sideNavOpen"></app-filter>
+              </div>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+
+        <div>
+          <app-survey-navbar></app-survey-navbar>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="homeContent">
+      <app-data-visualization [updateDataVisualization]="updateDataVisualization"></app-data-visualization>
+      <cmi-os-help-button currentProjectName="MVP" [userName]="displayName" [userEmail]="userEmail"
+        [isDummy]="!isSaasEnvironment"></cmi-os-help-button>
+      <cmi-os-agreement-checker [isSaasIntegrated]="isSaasIntegrated"></cmi-os-agreement-checker>
+    </div>
+  </div>
+</div>

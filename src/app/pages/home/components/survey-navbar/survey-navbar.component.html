@@ -1,0 +1,18 @@
+<div class="survey-navbar-menu" [hidden]="!sections.length">
+    <div class="category-header">CATEGORY</div>
+    <ul>
+        <ng-container *ngFor="let item of sections">
+            <li>
+
+                <a [routerLink]="['/']" fragment="{{item.htmlId}}" [title]="item.name"
+                    [attr.menuNumber]="'{{item.position}}'">
+                    <div class="d-flex align-items-center menu-item" [class.active]="item.isActive"
+                        (click)="setMenuItem(item)">
+                        <div class="menuItem"></div>
+                        <div class="text"> {{item.name}}</div>
+                    </div>
+                </a>
+            </li>
+        </ng-container>
+    </ul>
+</div>

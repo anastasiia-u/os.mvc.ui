@@ -1,0 +1,45 @@
+.sub-navbar {
+  width: 332px;
+  margin-bottom: 0px;
+  padding: 16px 24px 0px 20px;
+  border-radius: 10px;
+
+  .open {
+    width: 295px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--custom-color-blue) !important;
+    color: white !important;
+    box-shadow: none;
+    font-family: 'KentledgeLight' !important;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  .fileName {
+    margin: 16px 0 0 0 !important;
+    width: 100%;
+
+    p {
+      color: var(--custom-color-blue-dark4);
+      font-family: 'KentledgeLight' !important;
+      font-size: 14px;
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing: 0px;
+      text-align: left;
+      padding-left: 12px;
+      overflow-wrap: break-word;
+      margin: 0;
+    }
+  }
+}
+
+.button-text {
+  font-family: 'Kentledge' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}

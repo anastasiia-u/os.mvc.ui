@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <title></title>
+    <defs>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-chevron-square-CYAN-UP-FILLED">
+            <rect fill="#FFFFFF" x="0" y="0" width="60" height="60"></rect>
+            <g id="icon-/-square-CYAN" fill="#785891">
+                <rect id="Rectangle" filter="url(#filter-1)" x="0" y="0" width="60" height="60" rx="10"></rect>
+            </g>
+            <path d="M36.4020131,10.1815294 C37.2889085,9.37079599 38.5378272,9.07286963 39.7013302,9.39281379 C40.8698584,9.71448727 41.7859298,10.6139614 42.1165958,11.769655 C42.4493968,12.9343915 42.1365732,14.1795008 41.2680962,15.0921975 L26.0940062,29.9756605 L41.2614939,44.8549804 C41.8220003,45.3981648 42.1775301,46.1115123 42.2745472,46.896094 L42.2945567,47.1117626 L42.3000062,47.298393 C42.3000062,48.2174729 41.9258726,49.0979364 41.2675087,49.7359444 C40.6151288,50.3752112 39.7336688,50.7333272 38.8156734,50.7333272 C37.897305,50.7333272 37.0159187,50.3749645 36.3608411,49.7329993 L18.6921983,32.3231179 C18.0566037,31.6834429 17.7000062,30.8228218 17.7000062,29.9254844 C17.7000062,29.0264666 18.0578065,28.1663063 18.7067652,27.5133878 L36.3819792,10.2004871 L36.4020131,10.1815294 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero" transform="translate(30.000006, 30.000000) scale(1, -1) rotate(-90.000000) translate(-30.000006, -30.000000) "></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,40 @@
+::ng-deep .cmi-os-ft .header {
+  font-family: 'Kentledge' !important;
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  line-height: 16px !important;
+  text-align: left;
+  color: var(--custom-color-dark-purple);
+}
+
+::ng-deep .search-by .cmi-os-ft .body {
+  font-family: Kentledge !important;
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  line-height: 16px !important;
+  text-align: left;
+  color: var(--custom-color-dark-purple);
+
+  button {
+    color: var(--custom-color-primary-purple) !important;
+
+    &:hover {
+      background-color: var(--custom-color-button-hover) !important;
+    }
+  }
+}
+
+::ng-deep #search-by .filter-button:hover {
+  background-color: var(--custom-color-button-hover) !important;
+  color: var(--custom-color-primary-purple) !important;
+}
+
+::ng-deep #search-by .filter-button.active:hover {
+  background-color: var(--custom-color-primary-purple) !important;
+  color: #ffffff !important;
+}
+
+::ng-deep #search-by .filter-button.active {
+  background-color: var(--custom-color-primary-purple) !important;
+  color: #ffffff !important;
+}

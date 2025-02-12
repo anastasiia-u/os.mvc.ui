@@ -1,0 +1,100 @@
+.filter-dialog-result-container {
+  padding: 16px 8px 0 8px;
+  display: flex;
+  justify-content: space-between;
+
+  .filter-dialog-result-name {
+    width: 70%;
+    white-space: normal;
+    color: var(--custom-color-blue-dark4);
+    font-family: "KentledgeLight";
+    font-size: 12px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 14px;
+    overflow-wrap: break-word;
+  }
+}
+
+.filter-dialog-result-count {
+  color: var(--custom-color-blue-dark4);
+  font-family: "KentledgeBold";
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 16px;
+}
+
+.filter-result-container {
+  padding: 16px 8px 32px;
+
+  .filter-count {
+    @extend .filter-dialog-result-count;
+    float: right;
+  }
+}
+
+.inactive {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}
+
+::ng-deep .filter-type .cmi-os-ft>.container .content {
+  justify-content: unset !important;
+}
+
+::ng-deep .filter-type .cmi-os-ft .body {
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 12px !important;
+
+  button {
+    min-width: 65px !important;
+    color: var(--custom-color-primary-purple) !important;
+    font-weight: 400;
+    font-size: 12px;
+
+    &:hover {
+      background-color: var(--custom-color-button-hover) !important;
+    }
+  }
+}
+
+::ng-deep #filter-type .filter-button:hover {
+  background-color: var(--custom-color-button-hover) !important;
+  color: var(--custom-color-primary-purple) !important;
+}
+
+::ng-deep #filter-type .filter-button.active:hover {
+  background-color: var(--custom-color-primary-purple) !important;
+  color: #ffffff !important;
+}
+
+::ng-deep #filter-type .filter-button.active {
+  background-color: var(--custom-color-primary-purple) !important;
+  color: #ffffff !important;
+}
+
+.header {
+  width: 100%;
+  color: #4F5474;
+  font-family: "KentledgeLight";
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.info-icon {
+  cursor: pointer;
+  display: inline;
+  font-size: 14px;
+}

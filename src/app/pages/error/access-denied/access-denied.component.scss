@@ -1,0 +1,13 @@
+.access-denied-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e9e9ed;
+}
+
+h1 {
+    margin: 40px 0 20px;
+    text-align: center;
+}

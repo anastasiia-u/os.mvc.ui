@@ -1,0 +1,47 @@
+.view-row {
+    display: flex;
+    justify-self: left;
+    align-items: center;
+}
+
+.label {
+    margin-right: 8px;
+    font-family: 'KentledgeMedium';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22.4px;
+    margin-right: 8px;
+    color: #4F5474;
+}
+
+.isDisabled {
+    opacity: 0.5;
+}
+
+.show-view-btn {
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+
+    &:hover {
+        background-color: #EEEAF1;
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin: 10px 8px 8px 10px;
+    color: #232951;
+}
+
+.sepparator {
+    border-left: 1px solid gray;
+    height: 24px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.left-btn {
+    border-right: 1px solid #d3d4dc;
+}

@@ -1,0 +1,8 @@
+{
+    "/api": {
+        "target": "https://saas-admin.dev.saas.compasonline.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

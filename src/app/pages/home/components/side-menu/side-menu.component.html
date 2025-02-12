@@ -1,0 +1,30 @@
+<mat-tree class="menu-area"
+          [dataSource]="nestedDataSource" 
+          [treeControl]="nestedTreeControl">
+
+    <mat-nested-tree-node      
+        *matTreeNodeDef="let node; when: hasSubmenu">
+        <div class="menu-item no-selection"  matTreeNodeToggle>
+            {{node.title}}
+            <span class="spacer"></span>
+            <mat-icon>
+                {{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+        </div>
+        <div class="subtree-container" [class.subtree-invisible]="!nestedTreeControl.isExpanded(node)">
+            <ng-container matTreeNodeOutlet></ng-container>
+        </div>
+    </mat-nested-tree-node>
+
+    <mat-tree-node 
+        class="submenu-item no-selection"
+        *matTreeNodeDef="let node"
+        (click)="menuNavigation(node)"
+        matTreeNodeToggle>
+            <div class="marker"
+            [ngClass]="isRouteActive(node.url) ? 'marker-active' : 'marker'"></div>
+            <img src={{node.imgSrc}} style="margin-right: 1rem; width: 1rem;">
+            {{node.title}}
+    </mat-tree-node>
+
+</mat-tree>

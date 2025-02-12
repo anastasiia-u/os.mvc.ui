@@ -1,0 +1,17 @@
+<div class="filter-type" id="filter-type">
+  <cmi-os-filter-type [title]="titleText" [tooltipText]="filterTypeTooltipText" [buttons]="filterTypeButtons"
+    (onFilterChanged)="filterTypeChanged($event)">
+    <div class="header">
+      Specialty Type <mat-icon class="info-icon" *ngIf="specialtyTypeTooltipText"
+        [matTooltip]="specialtyTypeTooltipText" matTooltipPosition="above">info_outline</mat-icon>
+    </div>
+  </cmi-os-filter-type>
+</div>
+<div *ngIf="surveyDataService.hcpTargetList$ | async as result">
+  <div class="filter-dialog-result-container">
+    <div class="filter-dialog-result-name">{{result.displayName}}</div>
+    <div class="filter-dialog-result-count" [innerHTML]="result.displayCount"></div>
+  </div>
+
+  <div class="inactive my-2" *ngIf="result.inactive">*This target list has been deactivated / deleted</div>
+</div>

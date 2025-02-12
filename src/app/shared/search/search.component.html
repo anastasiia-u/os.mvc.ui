@@ -1,0 +1,78 @@
+<button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+
+<div class="search-field">
+  <mat-form-field appearance="outline" subscriptSizing="dynamic" class="w-100">
+    <mat-icon class="icon" matPrefix color="primary" style="font-weight: bold;">search</mat-icon>
+    <mat-label class="label">Search by keyword</mat-label>
+    <input matInput [(ngModel)]="searchTerm" (ngModelChange)="searchData()" cdkFocusInitial>
+    <button *ngIf="searchTerm" matSuffix mat-mini-fab class="clear-btn" aria-label="Clear" (click)="clear()">
+      <mat-icon class="clear-btn-icon">close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<mat-dialog-content class="pt-0">
+  <div class="row">
+    <div class="table-container" [class.hasRows]="dataSource.data.length">
+      <table mat-table matSort matSortDisableClear [matSortActive]="activeSortColumn"
+        [matSortDirection]="activeSortDirection" [dataSource]="dataSource" class="mat-elevation-z0">
+
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <!-- <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox> -->
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event.checked ? checked(row) : unChecked(row)"
+              [checked]="isChecked(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="categoryName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by category"> Category </th>
+          <td class="category" mat-cell *matCellDef="let element"> {{element.categoryName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="questionName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by question"> Question </th>
+          <td class="question" mat-cell *matCellDef="let element"> {{element.questionName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="subquestionName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by subquestion">
+            Sub-Question </th>
+          <td class="sub-question" mat-cell *matCellDef="let element"> {{element.subquestionName}} </td>
+        </ng-container>
+
+        <tr class="table-header-row" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr class="table-row" [ngClass]="{hovered: row.hovered, highlighted: selection.isSelected(row)}" mat-row
+          *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+        </tr>
+      </table>
+    </div>
+
+    <div class="d-flex justify-content-center my-5" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div class="no-records-text " *ngIf="!dataSource.data.length && !isLoading">
+      No records found
+    </div>
+
+    <div *ngIf="dataSource.data.length" class="footer d-flex justify-content-end align-items-center">
+      <button class="save" type="button" mat-raised-button [disabled]="isSaveButtonDisabled()" (click)="save()">
+        Add to query
+      </button>
+
+      <mat-paginator #paginator [length]="model.count" [pageIndex]="page.pageNumber - 1" [pageSize]="page.pageSize"
+        [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="true" (page)="pageChanged($event)"
+        aria-label="Select page">
+      </mat-paginator>
+    </div>
+
+  </div>
+</mat-dialog-content>

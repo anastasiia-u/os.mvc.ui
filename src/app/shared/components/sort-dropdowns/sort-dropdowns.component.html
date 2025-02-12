@@ -1,0 +1,22 @@
+<div class="sort-dropdowns">
+    <cmi-os-simple-select [size]="'lg'" containerWidth="180px" labelText="Sort by"
+        [selectFormControl]="formGroup.get('sortBy')"
+        [formFieldIcon]="sortIcon"
+        [options]="sortByOptions"
+        [isOptionsSorted]="false">
+    </cmi-os-simple-select>
+
+    <cmi-os-simple-select [size]="'lg'" containerWidth="180px" labelText="Sort Order"
+        [selectFormControl]="formGroup.get('sortDirection')"
+        [formFieldIcon]="sortIcon"
+        [options]="sortOrderOptions"
+        [isOptionsSorted]="false">
+    </cmi-os-simple-select>
+
+    <cmi-os-multi-select size="lg" labelText="Visibility" containerWidth="180px"
+        [options]="_currentVisibilityOptions"
+        [selectFormControl]="formGroup.get('visibility')"
+        [formFieldIcon]="visibilityIcon"
+        [isOptionsSorted]="false">
+    </cmi-os-multi-select>
+</div>

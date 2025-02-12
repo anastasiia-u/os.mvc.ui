@@ -1,0 +1,62 @@
+<div class="cmi-os-dds">
+  <div class="container">
+    <div class="content {{dynamicTitle && _selectedOptions.length > 0 ? 'hasValue': ''}}">
+      <mat-form-field appearance="outline" subscriptSizing="dynamic"
+        [ngClass]="_currentOptions.length> 0 ? '' : 'cursorDisabled'">
+
+        <mat-label *ngIf="dynamicTitle && (_selectedOptions.length > 0 || isTitleAlwaysVisible)">{{title}}</mat-label>
+
+        <div matSuffix style="padding:0 8px;">
+          <img src="assets/icons/ddl-icon.svg" style="width: 20px; height: 20px; padding:2px;" />
+        </div>
+
+        <mat-select [panelClass]="isMultipleSelect ? 'cmi-os-dds-multi-popup' : 'cmi-os-dds-popup'"
+          class="readonly-block" [formControl]="formControlSelect" [placeholder]="selectPlaceholder"
+          [multiple]="isMultipleSelect" [title]="_selectedOptionsString == '' ? title : _selectedOptionsString"
+          (openedChange)="isOpeningOptions($event)">
+
+          <!-- < > Filter feature -->
+          <div *ngIf="isToShowSearch" class="cmi-os-dds searchWrapper">
+            <div class="searchWrapperInput">
+              <mat-icon>search</mat-icon>
+
+              <input #filterInput placeholder="{{searchPlaceholder || ''}}" [(ngModel)]="_searchTerm"
+                (input)="filterItems(filterInput.value)" (keydown)="$event.stopPropagation()" />
+            </div>
+          </div>
+          <!-- </> Filter feature -->
+
+          <!-- < > Select All feature -->
+          <div *ngIf="isToShowCheckAndUncheckAll && isMultipleSelect" class="cmi-os-dds checkWrapper">
+            <div class="checkRow">
+              <button mat-raised-button (click)="toggleAll(true)">
+                <img class="check-icon" src="assets/dropdown-simple/circle_check.svg" />
+                Select all
+              </button>
+              <button mat-stroked-button (click)="toggleAll(false)">
+                <img class="check-icon" src="assets/dropdown-simple/circle_uncheck.svg" />
+                Unselect all
+              </button>
+            </div>
+          </div>
+          <!-- </> Select All feature -->
+
+          <mat-option *ngFor="let option of _currentOptions" [value]="option.id" [disabled]=" option.isDisabled"
+            title="{{option.name}}" (onSelectionChange)="onOptionChange($event)">
+
+            {{ option.name }}
+
+
+            <img *ngIf="option.isDeleted" style="width:18px; height: 18px; margin-left:10px; color: red;"
+              src="assets/dropdown-simple/circle_close.svg" />
+
+          </mat-option>
+
+          <div *ngIf="this._currentOptions.length == 0" style="color:#aaa; font-style:italic; padding:5px;">
+            No items found.
+          </div>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

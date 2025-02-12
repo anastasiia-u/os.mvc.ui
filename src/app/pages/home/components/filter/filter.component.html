@@ -1,0 +1,37 @@
+<section class="filter-container" [class.has-results]="hasResults()">
+  <div class="filter-component" id="surveyType">
+    <app-survey-type-dropdown #surveyType></app-survey-type-dropdown>
+  </div>
+
+  <div class="filter-component" id="period">
+    <app-reporting-period-dropdown #period (onChanged)="reportingPeriodChanged()"></app-reporting-period-dropdown>
+  </div>
+
+  <div class="filter-component" style="padding:0 0 0 7px !important;">
+    <app-filter-type #filterType></app-filter-type>
+  </div>
+
+  <!-- <div class="filter-component" [hidden]="hideSpecialtyDropdown">
+    <app-specialty-dropdown #specialty></app-specialty-dropdown>
+  </div> -->
+
+  <div class="filter-component" style="padding-left:7px;">
+    <app-search-by (surveyResult)="applySurveyResult($event)"></app-search-by>
+  </div>
+
+  <div class="filter-component" id="category" style="width:247px !important; margin:12px auto;">
+    <app-category-dropdown #category></app-category-dropdown>
+  </div>
+  <div class="filter-component" id="question" style="width:247px !important;margin:12px auto;">
+    <app-question-dropdown #question></app-question-dropdown>
+  </div>
+
+  <div class="filter-component" id="response" style="width:247px !important;margin:12px auto;">
+    <app-sub-question-response-dropdown #subQuestionResponse></app-sub-question-response-dropdown>
+  </div>
+
+  <div class="filter-actions">
+    <app-filter-actions #filterAction (resetControls)="resetControls()" (seeResult)="seeResult()"></app-filter-actions>
+  </div>
+
+</section>

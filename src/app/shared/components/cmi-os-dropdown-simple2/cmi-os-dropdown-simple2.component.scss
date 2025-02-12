@@ -1,0 +1,193 @@
+// @import "../../../styles/variables.scss";
+
+// < > Dropdown Simple
+// Tag 'cmi-os-dds' should be unique
+
+.cmi-os-dds {
+  width: 247px;
+  margin: 0 auto;
+}
+
+.cmi-os-dds>.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.cmi-os-dds>.container .content mat-form-field {
+  width: 100%;
+}
+
+.cmi-os-dds>.container .title {
+  width: 100%;
+  color: var(color-blue-dark4);
+  font-family: "KentledgeLight";
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.cmi-os-dds>.container .content {
+  width: 100%;
+}
+
+.cursorDisabled {
+  cursor: default;
+}
+
+.cursorDisabled .readonly-block {
+  pointer-events: none;
+}
+
+.readonly-wrapper {
+  cursor: not-allowed;
+}
+
+.readonly-wrapper .readonly-block {
+  pointer-events: none;
+}
+
+.cmi-os-dds>.container .content option {
+  width: 100%;
+}
+
+.cmi-os-dds>.container .content .iconColor {
+  color: var(--custom-color-dropdown-simple_iconColor);
+}
+
+// This is a popup associated to dropdown, so the CSS path is different
+.cmi-os-dds.searchWrapper {
+  display: inline-block;
+  width: 100%;
+  padding: 0 10px 24px 10px;
+}
+
+.mat-mdc-select-value {
+  padding-left: 0px;
+}
+
+
+.cmi-os-dds.searchWrapper .searchWrapperInput {
+  width: 100%;
+}
+
+.cmi-os-dds.searchWrapper .searchWrapperInput>input {
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  border: 1px solid var(color-blue-dark4);
+  padding-left: 56px;
+}
+
+.cmi-os-dds.searchWrapper .searchWrapperInput>mat-icon {
+  color: var(--custom-color-blue-dark3);
+  position: absolute;
+  font-weight: bold;
+  width: 48px;
+  height: 48px;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cmi-os-dds.checkWrapper {
+  width: 100%;
+  padding: 0 10px 24px;
+}
+
+.cmi-os-dds.checkWrapper .checkRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cmi-os-dds.checkWrapper .checkRow button {
+  border-radius: 16px;
+  box-shadow: 0px 0px 5px var(--custom-color-blue-dark1);
+  opacity: 1;
+  background-color: #ffffff;
+  height: 32px;
+  padding: 0 5px;
+  color: var(--custom-color-purple5);
+  font-family: "KentledgeRegular";
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.cmi-os-dds.checkWrapper .checkRow .check-icon {
+  width: 16px;
+  height: 16px;
+}
+
+::ng-deep .cmi-os-dds .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  padding: 0;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__leading,
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__notch,
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: #E9EAEE !important;
+}
+
+::ng-deep .cmi-os-dds .mat-mdc-form-field-infix {
+  min-height: 36px;
+}
+
+::ng-deep .cmi-os-dds .mat-mdc-select {
+  margin-top: 6px;
+}
+
+::ng-deep .cmi-os-dds .mat-mdc-select-value {
+  margin-top: 6px;
+}
+
+::ng-deep .cmi-os-ddg .mat-mdc-select-arrow-wrapper {
+  margin-top: 6px;
+}
+
+// ::ng-deep .mat-mdc-option .mat-pseudo-checkbox {
+//   border-radius: 15px !important;
+// }
+
+//Remove/hide default arrow
+::ng-deep .cmi-os-dds .mat-select-arrow,
+::ng-deep .cmi-os-dds .mat-mdc-select-arrow {
+  display: none !important;
+}
+
+::ng-deep .cmi-os-dds .mat-mdc-select-value,
+::ng-deep .cmi-os-dds .mat-mdc-select-min-line {
+
+  font-family: 'Kentledge' !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 16.8px !important;
+  color: var(--custom-color-primary-dark-purple) !important;
+}
+
+
+::ng-deep .mat-form-field-label {
+  font-family: 'Kentledge' !important;
+  font-weight: 400 !important;
+  font-size: 10px !important;
+  line-height: 14.48px !important;
+  color: var(--custom-color-v60-dark-purple) !important;
+}
+
+::ng-deep .mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+  font-size: 10px !important;
+  font-family: 'Kentledge' !important;
+  font-weight: 400 !important;
+  font-size: 10px !important;
+  line-height: 14.48px !important;
+  color: var(--custom-color-v60-dark-purple) !important;
+}
+
+// </-> Dropdown Simple

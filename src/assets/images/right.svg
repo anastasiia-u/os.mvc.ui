@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title></title>
+    <defs>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-chevron-RIGHT-SQ">
+            <g id="rectangle-/-ppl-4-ROund-" fill="#785891">
+                <rect id="Rectangle" filter="url(#filter-1)" x="0" y="0" width="60" height="60" rx="10"></rect>
+            </g>
+            <path d="M36.5653709,9.00820791 C37.5333148,8.11487825 38.8979624,7.7862149 40.1693406,8.13918456 C41.4446127,8.49361816 42.4430477,9.48338997 42.8029463,10.753348 C43.1646936,12.0315641 42.8246409,13.3980655 41.8771114,14.4033059 L26.153,29.9749876 L41.869523,45.5403455 C42.4799488,46.1375947 42.8667908,46.9211755 42.9724428,47.7852452 L42.994242,48.0228166 L43,48.2240537 C43,49.232895 42.5930261,50.199852 41.8764373,50.9009592 C41.164686,51.6051104 40.2019988,51.9999876 39.1989572,51.9999876 C38.195508,51.9999876 37.2329011,51.6048381 36.5180319,50.8975413 L18.0799847,32.5548185 C17.3878839,31.851577 17,30.9064473 17,29.9214911 C17,28.9346895 17.3891953,27.9900585 18.0967285,27.2713793 L36.5404301,9.03203576 L36.5653709,9.00820791 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero" transform="translate(30.000000, 29.999994) scale(-1, -1) rotate(-360.000000) translate(-30.000000, -29.999994) "></path>
+        </g>
+    </g>
+</svg>

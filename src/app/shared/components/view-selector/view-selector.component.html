@@ -1,0 +1,32 @@
+<div *ngIf="viewOptions?.length" class="view-row">
+    <div class="label">View:</div>
+    <div matTooltip="Chart" (click)="onViewSelected(viewOptions[0].viewType)" class="show-view-btn left-btn"
+        *ngIf="viewOptions && viewOptions[0].viewType === viewTypesEnum.BarChart">
+        <mat-icon class="icon" [ngClass]="{isDisabled: !viewOptions[0].isActive}" svgIcon="bar-chart-icon"></mat-icon>
+    </div>
+    <div (click)="onViewSelected(viewOptions[0].viewType)" class="show-view-btn left-btn"
+        *ngIf="viewOptions && viewOptions[0].viewType === viewTypesEnum.PieChart">
+        <mat-icon matTooltip="Chart" class="icon" [ngClass]="{isDisabled: !viewOptions[0].isActive}"
+            svgIcon="pie-chart-icon"></mat-icon>
+    </div>
+    <div (click)="onViewSelected(viewOptions[0].viewType)" class="show-view-btn left-btn"
+        *ngIf="viewOptions && viewOptions[0].viewType === viewTypesEnum.Table">
+        <mat-icon matTooltip="Table" class="icon" [ngClass]="{isDisabled: !viewOptions[0].isActive}"
+            svgIcon="table-icon"></mat-icon>
+    </div>
+    <div (click)="onViewSelected(viewOptions[1].viewType)" class="show-view-btn"
+        *ngIf="viewOptions && viewOptions[1].viewType === viewTypesEnum.BarChart">
+        <mat-icon matTooltip="Chart" class="icon" [ngClass]="{isDisabled: !viewOptions[1].isActive}"
+            svgIcon="bar-chart-icon"></mat-icon>
+    </div>
+    <div (click)="onViewSelected(viewOptions[1].viewType)" class="show-view-btn"
+        *ngIf="viewOptions && viewOptions[1].viewType === viewTypesEnum.PieChart">
+        <mat-icon matTooltip="Chart" class="icon" [ngClass]="{isDisabled: !viewOptions[1].isActive}"
+            svgIcon="pie-chart-icon"></mat-icon>
+    </div>
+    <div (click)="onViewSelected(viewOptions[1].viewType)" class="show-view-btn"
+        *ngIf="viewOptions && viewOptions[1].viewType === viewTypesEnum.Table">
+        <mat-icon matTooltip="Table" class="icon" [ngClass]="{isDisabled: !viewOptions[1].isActive}"
+            svgIcon="table-icon"></mat-icon>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="main-content">
+  <ng-container *ngFor="let section of surveySections">
+    <section *ngIf="section.isVisible" id="{{section.htmlId}}" class="main_section">
+      <div class="sectionArea">
+        <div class="sectionAreaHeader">
+          <div class="sectionAreaHeaderTitleLabel"> Category </div>
+          <div class="label">{{section.name}}</div>
+        </div>
+
+        <div class="masonry-container masonry-container-col1">
+          <ng-container *ngFor="let result of section.fullWidthResults">
+            <div class="masonry-child">
+
+              <app-cmi-os-card-layered-data-visualization [isLoading]="result.isLoading" [input]="result.card"
+                [question]="result.question" [section]="section" [UniversalLabelText]="UniversalLabelText()"
+                (OnViewModeChanged)="onViewModeChanged($event)">
+                <ng-container *ngIf="isProfessionalSurveyType()">
+                  <app-slicer [data]="chartFiltersData" [sectionId]="section.id" [categoryId]="result.categoryId"
+                    [questionId]="result.questionId" [answerIds]="result.answerIds"
+                    (OnFilterChanged)="onFilterChanged($any($event), result)"></app-slicer>
+                </ng-container>
+              </app-cmi-os-card-layered-data-visualization>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </ng-container>
+</div>

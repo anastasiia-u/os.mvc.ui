@@ -1,0 +1,4 @@
+<cmi-os-dropdown-simple #catFilter title="Categories" selectPlaceholder="Type OR choose category" searchPlaceholder=""
+    [defaultValues]="defaultCategories" [isMultipleSelect]="true" [isToShowSearch]="true"
+    [isToShowCheckAndUncheckAll]="true" [options]="categories" (onValuesChanged)="categoriesChanged($event)">
+</cmi-os-dropdown-simple>

@@ -1,0 +1,18 @@
+::ng-deep .dropdown-item .mat-mdc-checkbox label {
+    width: max-content;
+    max-width: 300px;
+
+    span {
+        display: block;
+        width: 240px;
+        line-height: inherit;
+    }
+}
+
+::ng-deep .mat-mdc-option.mat-mdc-option-active {
+    background: var(--custom-color-white) !important;
+}
+
+::ng-deep .mat-mdc-option.mat-mdc-option-active:hover {
+    background: rgba(0, 0, 0, 0.04) !important;
+}

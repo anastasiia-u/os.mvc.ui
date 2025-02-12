@@ -1,0 +1,204 @@
+.table-container {
+    max-height: 400px;
+    overflow: auto;
+
+    .hasRows {
+        min-height: 400px;
+    }
+}
+
+.close-button {
+    position: absolute;
+    right: 0;
+    border: none;
+    background: var(--custom-color-white);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    border: none;
+}
+
+
+td.mat-mdc-cell:first-child {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+td.mat-mdc-cell:last-child {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.clear-btn {
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--custom-color-blue-dark0);
+    box-shadow: none;
+
+    .clear-btn-icon {
+        font-size: 20px;
+        font-weight: 800;
+        padding-top: 2px;
+        color: var(--custom-color-blue-dark5);
+    }
+}
+
+.table-header-row {
+    height: auto !important;
+}
+
+th {
+    color: var(--custom-color-blue-dark4);
+    font-family: "KentledgeMedium";
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 40px;
+    border: none;
+    vertical-align: middle;
+}
+
+.table-row {
+    .category {
+        color: var(--custom-color-blue-dark4);
+        font-family: "KentledgeMedium";
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0px;
+        text-align: left;
+        line-height: 18px;
+    }
+
+    .question {
+        color: var(--custom-color-blue-dark4);
+        font-family: "KentledgeExtraBold";
+        font-size: 14px;
+        font-weight: 800;
+        font-style: normal;
+        letter-spacing: 0px;
+        text-align: left;
+        line-height: 18px;
+    }
+
+    .sub-question {
+        width: 40%;
+    }
+}
+
+.highlighted {
+    background-color: var(--custom-color-purple0) !important;
+}
+
+.no-records-text {
+    font-style: italic;
+    padding: 5px;
+    text-align: center;
+}
+
+::ng-deep .mat-sort-header-arrow[style] {
+
+    // Hide default arrow stem
+    .mat-sort-header-stem {
+        display: none;
+    }
+
+    .mat-sort-header-indicator {
+        opacity: 1;
+        color: black;
+        font-weight: bold;
+
+        // Hide default arrow as its composed of left, right and middle
+        .mat-sort-header-pointer-left,
+        .mat-sort-header-pointer-right,
+        .mat-sort-header-pointer-middle {
+            display: none;
+        }
+    }
+}
+
+
+// custom ascending arrow
+[aria-sort='ascending'] {
+    ::ng-deep .mat-sort-header-arrow {
+        .mat-sort-header-indicator {
+            &::before {
+                content: '';
+                background: url(../../../assets/sort_a-z.svg);
+                background-size: 20px;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: -5px;
+            }
+        }
+    }
+}
+
+// custom descending arrow
+[aria-sort='descending'] {
+    ::ng-deep .mat-sort-header-arrow {
+        .mat-sort-header-indicator {
+            &::before {
+                content: '';
+                background: url(../../../assets/sort_z-a.svg);
+                background-size: 20px;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: -15px;
+            }
+        }
+    }
+}
+
+.search-field {
+    margin: 24px 24px 16px 24px;
+
+    .label {
+        color: var(--custom-color-blue-dark4);
+        font-family: "KentledgeLight";
+        font-size: 12px;
+        font-weight: 300;
+        font-style: normal;
+        letter-spacing: 0px;
+        text-align: left;
+        line-height: 16px;
+    }
+
+    .icon {
+        color: var(--custom-color-blue-dark3);
+    }
+}
+
+.save {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--custom-color-purple4);
+    color: var(--custom-color-white);
+    font-family: "KentledgeBold";
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: center;
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+
+.footer {
+    margin: 24px 0;
+}
+
+.mat-mdc-dialog-content {
+    max-height: 100%;
+}

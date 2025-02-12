@@ -1,0 +1,14 @@
+<div class="sub-navbar">
+  <div class="d-flex flex-column align-items-baseline">
+
+    <button [disabled]="isOpenButtonDisabled" mat-raised-button class="open" (click)="open()"><span
+        class="button-text">Open a Saved
+        Audience</span></button>
+
+    <div *ngIf="getFileName()" class="fileName">
+      <p> {{getFileName()}}</p>
+    </div>
+    <div *ngIf="!getFileName()" style="margin: 0 !important;width:100%;height:10px;"></div>
+
+  </div>
+</div>
